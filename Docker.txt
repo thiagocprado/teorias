@@ -1,0 +1,49 @@
+docker version - versão do docker
+
+docker ps - lista o serviços rodando
+docker ps -a - lista todos os serviços
+
+docker run hello-world - teste para verificarmos se está tudo normal
+
+docker run -it <container> - atrela o terminal com o container (executa um terminal dentro do linux por exemplo)
+
+docker start <container> - inicia um container
+
+docker stop <container> - para um container
+
+docker start -a -i <container> - inicia um container com o terminal atrelado a ele
+
+docker rm <container> - remove um container
+
+docker container prune - remove todos os containers inativos
+
+docker images - mostra as imagens
+
+docker rmi <imagem> - remove a imagem 
+
+docker run dockersamples/static-site - antes da barra tem o nome do criador e depois da barra a imagem que queremos
+
+docker run -d - executa o container com o terminal desatrelado do container
+
+docker --name <nome que você quer> <container> - cria um container com um nome 
+
+docker run -d -P - cria um container com uma porta aleatória
+docker run -d -p <porta> - cria um container com uma porta escolhida por você
+
+docker ps -q - lista os ids dos containers
+
+docker stop -t 0 $(docker ps -q) - para os containers com os id's listados
+
+docker inspect <container> - informações sobre um container
+
+Mounts -> Source : nos mostra onde os dados serão salvos
+
+É possível rodar um código da nossa maquina local em um container 
+
+código de exemplo:  docker run -p -d 8080:3000 -v "C:\Users\Admin\Desktop\volume-exemplo:/var/www" -w "/var/www" node npm start
+
+Quando estamos dentro de uma pasta e não queremos escrever o caminho que fizemos para chegat até ela
+podemos utilizar "$(pwd)" que irá preencher o caminho daquela pasta automaticamente
+
+
+

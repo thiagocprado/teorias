@@ -1,0 +1,251 @@
+
+    HEAD: Estado atual do nosso código, ou seja, onde o Git nos colocou
+    Working tree: Local onde os arquivos realmente estão sendo armazenados e editados
+    index: Local onde o Git armazena o que será commitado, ou seja, o local entre a working tree e o repositório Git em si.
+    git init - inicia o git
+    git status -mostra o status do git
+    git add . - Adiciona todos os arquivos | git add <nome> - adiciona apenas o arquivo com o nome
+    git add <nome do arquivo> - salva apenas o arquivo desejado
+    Commit - mostra que há alterações a serem salvas
+    git commit -m "Adicionar descrição" - salva as alterções, manter a descrição simples
+    git log - mostra o histórico de alterações
+    git log --oneline - mostra mais resumidamente as mensagens 
+    git log -p - mostra um histórico mais detalhado
+    git log --graph
+    git config --local
+    git config --global
+    https://devhints.io/git-log
+
+    git init --bare - é um repósitório que só contém as alterações
+    git remote - lista os repositórios remotos
+    git remote add <nome> <"url"> - adiciona um novo repositório remoto
+
+    fetch - é de onde ele busca os arquivos
+    push - é pra onde ele envia os arquivos
+    
+    criamos uma pasta para quem desajamos compartilhar o projeto
+
+    damos um git clone </nomeDaPasta> 
+
+    depois damos outro git clone <"url do nosso servidor">
+
+    git push <nome do repositorio> <branch que estamos trabalhando> - envia os dados
+
+    git pull <nome do repositorio> <branch> - pega os dados
+
+    git branch <nome do branch> - cria um novo branch
+        
+    git checkout <nome do branch> - muda o branch em que se está trabalhando
+
+    git checkout -b <nome do branch> - já cria o branch e já te coloca nele
+         
+    O merge junta os trabalhos e gera um merge commit
+    O rebase aplica os commits de outra branch na branch atual
+
+    git checkout <nome do arquivo> - reseta alterações antes do git add
+    git reset HEAD <nome do arquivo> - reseta alterações depois do git add
+    git revert <hash do commit> - reseta alterções depois do commit
+
+    git stash - salva as alterações em um local temporário
+    git stash list - lista os arquivos 
+
+    git stash apply <numero da stash> - trás as alterações
+    git stash drop <numero da stash> - remove a stash da lista
+
+    git stash pop - trás as alterações deixadas de lado anteriormente, mas realizando os dois passos anteriores juntos
+
+    git checkout <hash> - "volta no tempo" dentro das modificações feitas
+    para que as alteções sejam salvas é preciso criar uma nova branch - git checkout -b <nome da branch>
+
+    git diff - mostra as diferenças dentro dos códigos
+    git diff <hash> <hash> - mostra diferença entre dois commits
+    
+    git tag -a <nome da tag> -m <mensagem> - gria um marco na aplicação, alterações não podem mais ser realzadas
+    no caso, seria necessário alterar em uma nova versão do nosso código.
+
+    git push local <tag> - envia a tag pro servidor
+
+    git push origin <tag> - envia pro git hub
+
+    git cherry-pick <hash> - utilizado para pegar um commit e levá-lo para master
+    
+    git bisect start - o comando irá nos ajudar a encontrar em determinado momento do desenvolvimento
+    onde algo foi alterado, sem precisarmos olhar commit a commit
+
+    git bisect bad <inicio> - inicio de onde ele irá começar a busca
+    git bisect good <final> - final do escopo onde as buscas serão feitas
+    
+    git bisect bad - avança para o o próximo commit
+    git bisect good - seleciona o commit desejado
+    
+    git bisect reset - retorna para master
+
+    git show <hash> - mostra todas as alterações realizadas num commit
+
+    git blame <arquivo> - mostra o nome dos responsáveis por cada alteção no código
+
+    git branch <nome da branch> -d - remove a branch
+    git branch <nome da branch> -D - remove a branch
+
+
+curso de git - 20222
+
+Dois tipos de controle de versão: "centralizado" e "distribuido".
+
+- centralizado: servidor centralizado que possui todo o histórico
+
+- distribuido: cada computador possuí uma cópia do repositório
+
+Não tem um tipo melhor que o outro, existe aquele que melhor se encaixa em uma necessidade específica
+
+Git: 
+
+operações locais:
+- navegação pelo histórico
+- criação de branch
+
+integridade:
+- uma vez um arquivo adicionado, todo seu histórico é mantido
+
+somente adição de conteúdo:
+- mesmo a remoção é feita através de uma adição de versão onde diz que o arquivo foi removido
+
+autonomia: 
+- facilidade para diversos colaborades realizarem alterações sem a dependência de arquivos
+
+-- COMANDOS BÁSICOS:
+
+git config --global user.name "nome" - configura o nome 
+git config --global user.email "email"- configura o email
+
+git config --list - lista as configurações do nosso git
+
+git init - inicia um repositório
+
+branch "master" ou "main" - branch principal (ambiente mais estável)
+
+arquivo ".git" armazena todas as informações do repositório
+
+git add . ou "nome do arquivo" - rastreia um novo arquivo
+
+git status - mostra os arquivos que foram alterados, adicionados ou removidos
+
+
+-- TRÊS ESTADOS DO GIT:
+
+working directory:
+- arquivos modificados, excluídos e adicionados
+
+git add .
+
+staging area:
+(staged)
+- arquivos adicionados e preparados para serem versionados (commitados)
+
+git commit -m ...
+
+commited:
+- arquivos salvos
+
+
+-- ALTERAÇÕES
+
+git diff - diz as alterações do ambiente de trabalho mais as alterações dentro dos arquivos
+git diff --cached
+git diff --staged
+
+
+-- LOGS
+
+git log - mostra os commits do mais recente pro mais antigo    
+git log --oneline - modificações em uma linha   
+
+
+-- BRANCHES
+
+git checkout <hash> - dá o checkout em um commit 
+
+podemos utilizar o checkout para commits para analisar erros
+atráves da listagem de modificações
+
+(as duas funcionalidades abaixo só funcionam para arquivos modificados e não novos arquivos)
+git checkout <nome do arquivo> - desfaz alterações em um arquivo especifico
+git reset --hard - desfaz todas as alterações na branch
+
+(para desfazer arquivos não rastreados)
+git clean -f 
+
+git checkout -u <remote> <branch> - cria uma branch que é rastreada pelo servidor
+
+Removendo branch do servidor 
+
+git push --delete <remote> <branch>
+
+
+-- CLONAR REPOSITÓRIOS
+
+git clone - clona o repositório
+o git clone também clona arquivos locais
+
+
+-- FORK
+
+copia um repositório por completo, com todo o histórico, etc.
+
+O fork nos permite colaborar em um projeto, com isso temos uma diferença para o git clone,
+o git clone permite apenas que baixemos e projeto e façamos alterações, mas não me permite que façamos alterações 
+no repositório remoto. Através do fork podemos criar "Pull Request's".
+
+
+-- MERGE
+
+o merge deve ser feito estando na branch que você deseja que receba as alterações
+ou seja, pra mergear na master, você precisa estar na master.
+
+git merge <branch> - mas não coloca mensagem de commit personalizada
+git merge --no-ff <branch> - permite colocar mensasgem de merge personalizada.
+
+
+-- TAGS 
+
+as tags podem ser usadas para fazer o versionamento do sistema 
+git tag -a <nome> -m "mensagem"
+
+git push origin <nome da tag>
+git tag -d <nome da tag>
+git push --delete <remote> <nome da tag>
+
+git checkout <nome da tag>
+
+git tag -a <nome da tag> <numero do commit> - cria tags em commits antigos
+
+
+-- STASH - salva suas alterações em memória
+
+git stash
+git stash save "mensagem"
+
+git stash list (do mais recente pro mais antigo)
+
+git stash apply - sempre pega o primeiro stash
+git stash pop - aplica o primeiro stash e já remove
+
+git stash apply <tag stash> - referencia do stash que você quer
+git stash pop <tag stash> - referencia do stash que você quer
+
+git stash drop <tag stash> - referencia do stash que você quer
+
+-- DESFAZENDO COMMITS
+
+git reset --hard HEAD~[numero de commits que você deseja voltar]
+
+-- joga uma mudança em um commit já existente
+git add .
+git commit --amend
+
+
+-- FETCH
+
+git fetch - trás as atualizações do servidor mas não aplica nenhuma alteração
+
+git branch | grep 'texto' - maneira de filtrar uma branch 

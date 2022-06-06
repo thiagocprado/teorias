@@ -1,0 +1,55 @@
+// comandos básicos
+nano <nome> -> abre um arquivo pra edição
+cat <nome> -> mostra o conteúdo
+
+// Processos
+
+ps -> processos do bash
+ps -e -> todos os processos do linux
+ps -ef > lista os processos e mais algumas informações
+ps -ef | grep <nome do processo> -> filtra os processos com base no nome
+
+kill <numero do processo> -> mata o processo (dá uma chance pro programa responder)
+kill -9 -> mata o processo direto
+sudo -> executa os comandos como root (administrador)
+
+// Usuários
+
+o root é o usuário principal do sistema
+su <nome do usuario> -> muda o usuario logado
+
+// Variáveis de ambiente
+
+env -> mostra as variáveis de ambiente do sistema
+env | grep PATH -> faciita a visualização
+
+PATH=$PATH:'/PATH QUE VOCÊ QUER'
+O PATH atual recebe o PATH  mais um novo caminho
+
+gedit .bashrc & -> abre o txt com as variáveis de ambiente
+
+// instalação de programas com apt
+
+apt -> gerenciador de pacotes
+
+sudo apt-get-update -> atualiza os programas da máquina
+
+apt-cache search <nome do programa> -> pesquisa lista de programas
+
+sudo apt-get-install <nome do programa> -> instala um novo programa
+
+sudo apt-get-remove <nome do programa> -> desinstala um programa
+
+// instalação de programas com dpkg
+
+arquivos .deb são instalados através do dpkg
+
+sudo dpkg -i <nome do arquivo.deb> -> instala um novo programa
+sudo dpkg -r <nome do pacote> -> desinstala um novo programa
+
+
+ // scripts de init e services
+ 
+sudo service <nome do pacote> stop -> pede para o progama parar
+
+sudo service <nome do pacote> start -> inicia o programa

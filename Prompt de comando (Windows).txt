@@ -1,0 +1,71 @@
+PATH 
+
+atalhos: 
+
+seta pra cima nos mostra o penúltimo comando digitado.
+tecla tab nos da uma sugestão do nome do arquivo que procuramos.
+
+comandos:
+
+@echo off -> não deixa que os comandos echo fiquem a vista no prompt
+
+echo -> Nos permite escrever no prompt.
+
+dir -> nos permite ver o que há dentro da pasta atual. Investigar os arquivos. | Linux: ls
+
+cd (change directory) -> nos permite mudar o diretório da pasta que estamos. 
+
+mkdir (make directory) -> cria uma pasta.
+
+rmdir -> remove diretórios.
+
+move - move os arquivos para outra pasta. | Linux: mv
+
+type - nos mostra o conteúdo de um arquivo. | Linux: cat
+
+. -> diretório atual.
+
+.. -> diretório de onde você veio (acima da atual).
+
+copy -> faz uma cópia de algo. | Linux: cp
+
+xcopy -> copia arquivos    | /e -> copia todos as pastas e subpastas | /y
+
+rename -> muda o nome do arquivo.
+
+del -> deleta arquivos. | Linux: rm
+
+cls (clear screen) -> limpa a tela do prompt.
+
+help -> nos mostra as opções que os comandos podem ter. 
+
+> -> redireciona a saída de um comando.
+
+>> -> adiciona um texto um arquivo que já existe, sem sobrescreve-lo.
+
+tree -> Mostra as pastas e subpastas organizadas em uma árvore.
+
+more -> (semelhante ao "type") mostra o conteúdo linha por linha, ao invés de mostra-lo todo de uma vez.
+
+.bat -> cria um script, podendo ler vários comandos de uma vez.
+
+pause -> aguarda o usuário fazer alguma interção com o teclado.
+
+set -> altera variáveis (temporarimente).
+
+setx -> altera variáveis (permanentemente).
+
+chocolatey -> utilizamos para instalar programas sem precisar ir no site original dos sites, instalamos
+através do cmd.
+
+
+comandos Linux:
+
+grep -> pega o conteudo de texto digitado e procura no computador.
+
+| -> liga 2 comandos. Pega a saída de um comando e coloca na entrada de outro.
+
+find . -> mostra as subpastas da pasta atual que você está.
+
+
+
